@@ -14,7 +14,7 @@ function setup() {
   let serverAddress = "https://acebyte.github.io/btb-chat/";
   let serverPort = 12345; // Use the port you've configured on the server
 
-  chatServer = new WebSocket("ws://" + serverAddress + ":" + serverPort);
+  chatServer = new WebSocket(serverAddress + ":" + serverPort);
 
   chatServer.onopen = function (event) {
     console.log("Connected to the server.");
