@@ -7,14 +7,14 @@ let inputField;
 let sendButton;
 let chatArea;
 
-// Define serverAddress and serverPort here
-let serverAddress = "127.0.0.1"; // Change to the appropriate address
-let serverPort = "8238"; // Change to the appropriate port
-
 function setup() {
   createCanvas(windowWidth, windowHeight); // Use the full window size
 
-  chatServer = new WebSocket("ws://127.0.0.1:8238");
+  // Replace "your-domain-name.com" with your actual domain name
+  let serverAddress = "https://acebyte.github.io/btb-chat/";
+  let serverPort = 12345; // Use the port you've configured on the server
+
+  chatServer = new WebSocket("ws://" + serverAddress + ":" + serverPort);
 
   chatServer.onopen = function (event) {
     console.log("Connected to the server.");
