@@ -1,25 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
-  <script language="javascript" type="text/javascript" src="p5.min.js"></script>
-  <script language="javascript" type="text/javascript" src="chatt.js"></script>
-  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
-
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-    }
-    html, body {
-      overflow: hidden;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AceByte</title>
 </head>
-
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#art">Art</a></li>
+                <li><a href="#photo">Photo</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h1>AceByte</h1>
+        <img src="media/pfp.png" width="300" height="300"/>
+        <b4><br>my profile picture</b4>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello there! I'm Ace, I'm a student from Denmark currently majoring in Communication and IT at H.C. Ørsted Gymnasium.</p>
+        <p>Ive had an interest in art for about as long as i remember, having been drawing since i could hold a pencil, and now working with digital art daily
+        <p>My journey as a digital artist began in 2019 when I took my first steps into the world of 3D art. Since then, I've been working actively to improve my skills in the fields. I've crafted 3D models, and even dabbled in animation.
+        <br>Realizing that 3d art would not be enough, i bought a small drawing tablet and started working. and recently bought one with a display and i have been working relentlessly to improve my skills in that aspect aswell</p>
+        <p>Fast forward to 2022, and my passion for multi media design led me to the art of photography. Armed with a camera, I got to work, capturing moments, and the beauty of the world around me.
+        <br>But I'm not just an artist and photographer; I'm also a programmer. in fact. the website that youre currently on has been programmed by me from nothing.</p>
+    </section>
+
+    <section id="art">
+        <h2>Artwork</h2>
+        <div id="image-gallery" class="image-grid">
+            <img src="media/bomb.png" onclick="enlargeImage('media/bomb.png')">
+            <img src="media/crack.png" onclick="enlargeImage('media/crack.png')">
+            <img src="media/EYEEE.png" onclick="enlargeImage('media/EYEEE.png')">
+            <img src="media/josef.png" onclick="enlargeImage('media/josef.png')">
+            <img src="media/oldpfp.png" onclick="enlargeImage('media/oldpfp.png')">
+            <img src="media/pfp.png" onclick="enlargeImage('media/pfp.png')">
+            <img src="media/raven.jpg" onclick="enlargeImage('media/raven.jpg')">
+            <img src="media/rose.png" onclick="enlargeImage('media/rose.png')">
+            <img src="media/sadbomb.png" onclick="enlargeImage('media/sadbomb.png')">
+            <img src="media/shroom.png" onclick="enlargeImage('media/shroom.png')">
+            <img src="media/vulkan.png" onclick="enlargeImage('media/vulkan.png')">
+        </div>
+    </section>
+        
+
+    <section id="photo">
+        <h2>Photography</h2>
+        <div id="image-gallery" class="image-grid">
+            <img src="media/IMG_0144.jpg" onclick="enlargeImage('media/IMG_0144.jpg')">
+            <img src="media/IMG_0175.jpg" onclick="enlargeImage('media/IMG_0175.jpg')">
+            <img src="media/IMG_0183.jpg" onclick="enlargeImage('media/IMG_0183.jpg')">
+            <img src="media/IMG_0201.jpg" onclick="enlargeImage('media/IMG_0201.jpg')">
+            <img src="media/IMG_0205.jpg" onclick="enlargeImage('media/IMG_0205.jpg')">
+            <img src="media/IMG_0215.jpg" onclick="enlargeImage('media/IMG_0215.jpg')">
+            <img src="media/IMG_0251.jpg" onclick="enlargeImage('media/IMG_0251.jpg')">
+            <img src="media/IMG_0253.jpg" onclick="enlargeImage('media/IMG_0253.jpg')">
+            <img src="media/IMG_0257.jpg" onclick="enlargeImage('media/IMG_0257.jpg')">
+            <img src="media/IMG_0258.jpg" onclick="enlargeImage('media/IMG_0258.jpg')">
+            <img src="media/IMG_0260.jpg" onclick="enlargeImage('media/IMG_0260.jpg')">
+            <img src="media/IMG_0261.jpg" onclick="enlargeImage('media/IMG_0261.jpg')">
+            <img src="media/IMG_0262.jpg" onclick="enlargeImage('media/IMG_0262.jpg')">
+            <img src="media/IMG_0263.jpg" onclick="enlargeImage('media/IMG_0263.jpg')">
+            <img src="media/IMG_0281.jpg" onclick="enlargeImage('media/IMG_0281.jpg')">
+            <img src="media/IMG_0290.jpg" onclick="enlargeImage('media/IMG_0290.jpg')">
+            <img src="media/IMG_0298.jpg" onclick="enlargeImage('media/IMG_0298.jpg')">
+            <img src="media/IMG_0301.jpg" onclick="enlargeImage('media/IMG_0301.jpg')">
+            <img src="media/IMG_0308.jpg" onclick="enlargeImage('media/IMG_0308.jpg')">
+            <img src="media/IMG_0311.jpg" onclick="enlargeImage('media/IMG_0311.jpg')">
+            <img src="media/IMG_0319.jpg" onclick="enlargeImage('media/IMG_0319.jpg')">
+            <img src="media/IMG_0325.jpg" onclick="enlargeImage('media/IMG_0325.jpg')">
+            <img src="media/IMG_0332.jpg" onclick="enlargeImage('media/IMG_0332.jpg')">
+            <img src="media/IMG_0340.jpg" onclick="enlargeImage('media/IMG_0340.jpg')">
+            <img src="media/IMG_0349.jpg" onclick="enlargeImage('media/IMG_0349.jpg')">
+            <img src="media/IMG_0350.jpg" onclick="enlargeImage('media/IMG_0350.jpg')">
+            <img src="media/IMG_0360.jpg" onclick="enlargeImage('media/IMG_0360.jpg')">
+            <img src="media/IMG_0364.jpg" onclick="enlargeImage('media/IMG_0364.jpg')">
+            <img src="media/IMG_0368.jpg" onclick="enlargeImage('media/IMG_0368.jpg')">
+            <img src="media/IMG_0371.jpg" onclick="enlargeImage('media/IMG_0371.jpg')">
+            <img src="media/IMG_0382.jpg" onclick="enlargeImage('media/IMG_0382.jpg')">
+            <img src="media/IMG_0482.jpg" onclick="enlargeImage('media/IMG_0482.jpg')">
+            <img src="media/IMG_0484.jpg" onclick="enlargeImage('media/IMG_0484.jpg')">
+            <img src="media/IMG_0504.jpg" onclick="enlargeImage('media/IMG_0504.jpg')">
+            <img src="media/IMG_0505.jpg" onclick="enlargeImage('media/IMG_0505.jpg')">
+            <img src="media/IMG_0513.jpg" onclick="enlargeImage('media/IMG_0513.jpg')">
+
+        </div>    
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <!-- Add a contact form or contact information here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Ace</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
