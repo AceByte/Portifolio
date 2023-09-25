@@ -36,3 +36,39 @@ document.addEventListener('contextmenu', (e) => {
         e.preventDefault();
     }
 });
+
+function compressImage(file, callback) {
+    const options = {
+        quality: 0.6, // Adjust the quality as needed (0.1 to 1)
+        maxWidth: 800, // Maximum width of the compressed image
+        maxHeight: 800, // Maximum height of the compressed image
+    };
+
+    new ImageCompressor(file, {
+        ...options,
+        success(result) {
+            // Handle the compressed image (result) here
+            callback(result);
+        },
+        error(e) {
+            console.error(e.message);
+        },
+    });
+}
+
+// Example usage when an image input is selected by the user
+const imageInput = document.getElementById('your-image-input');
+
+imageInput.addEventListener('change', (event) => {
+    const selectedImage = event.target.files[0];
+
+    if (selectedImage) {
+        compressImage(selectedImage, (compressedImage) => {
+            // Handle the compressed image, for example, by displaying it
+            const compressedImageUrl = URL.createObjectURL(compressedImage);
+            const imgElement = document.createElement('img');
+            imgElement.src = compressedImageUrl;
+            // Append the imgElement to the DOM as needed
+        });
+    }
+});
