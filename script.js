@@ -72,3 +72,7 @@ imageInput.addEventListener('change', (event) => {
         });
     }
 });
+
+function goToGallery() {
+    window.location.href = 'gallery.html';
+}
