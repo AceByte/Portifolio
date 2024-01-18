@@ -173,3 +173,13 @@ li {
     width: 100%;
     transition: transform 0.5s ease; /* Smooth transition for image sliding */
 }
+
+@media only screen and (max-width: 768px) {
+    #main-sections-container {
+        flex-direction: column; /* Change the flex direction to stack sections vertically */
+    }
+
+    #about {
+        order: 1; /* Change the order of the about section to display below the home section */
+    }
+}
