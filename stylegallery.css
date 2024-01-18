@@ -174,12 +174,27 @@ li {
     transition: transform 0.5s ease; /* Smooth transition for image sliding */
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: max-height) {
     #main-sections-container {
         flex-direction: column; /* Change the flex direction to stack sections vertically */
     }
 
     #about {
         order: 1; /* Change the order of the about section to display below the home section */
+    }
+    header {
+        padding: 0.5rem 0; /* Adjust the padding for a more compact header */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjust the font size for h1 on mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically on mobile */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Add some space between navigation items on mobile */
     }
 }
