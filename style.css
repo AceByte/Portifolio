@@ -1,4 +1,3 @@
-/* Reset some default styles */
 body, ul, li {
     margin: 0;
     padding: 0;
@@ -15,7 +14,6 @@ body, ul, li {
     src: url('fonts/MartianMono-VariableFont_wdth,wght.ttf') format('truetype');
 }
 
-/* Basic styling for header and navigation */
 header {
     position: fixed;
     top: 0;
@@ -27,8 +25,8 @@ header {
     font-variation-settings: 'wght' 200, 'wdth' 200;
     text-align: center;
     padding: 1rem 0;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3); /* Adjust the shadow as needed */
-    backdrop-filter: blur(4px); /* Add backdrop filter for blur effect */
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
 }
 
 h1{
@@ -36,7 +34,7 @@ h1{
     font-family: 'headers', sans-serif;
     font-variation-settings: 'wght' 200, 'wdth' 200;
     text-align: left;
-    font-size: 2em; /* Adjust the font size for h1 as needed */
+    font-size: 2em;
 } 
 h2, h3, h4 {
     color: #fff;
@@ -45,10 +43,33 @@ h2, h3, h4 {
     text-align: left;
 }
 
-p, b1, b2, b3, b4 {
+a {
+    color: #e2e2e2;
+    transition: font-size 0.3s ease;
+}
+
+/* Add this CSS rule */
+nav a:hover {
+    font-size: 1.3em; /* Increase the font size on hover */
+}
+
+
+p, b1, b2, b3, b4{
     color: #aaaaaa;
     font-family: 'text', sans-serif;
     text-align: left;
+}
+
+th {
+    color: #ffffff;
+    font-family: 'text', sans-serif;
+    text-align: center;
+}
+
+td {
+    color: #aaaaaa;
+    font-family: 'text', sans-serif;
+    text-align: center;
 }
 
 body {
@@ -84,14 +105,14 @@ nav a {
 
 #home {
     flex: 1;
-    background-color: #2f2f2f; /* Light gray for home section */
-    height: 55vh; /* Adjust the height as needed */
+    background-color: #2f2f2f;
+    height: 55vh;
 }
 
 #about {
     flex: 2;
-    background-color: #3b3b3b; /* A bit lighter gray for about section */
-    height: 60vh; /* Adjust the height as needed */
+    background-color: #3b3b3b;
+    height: 60vh;
 }
 
 #doing {
@@ -99,76 +120,116 @@ nav a {
 }
 
 #art {
-    background-color: #2f2f2f; /* Another shade for artwork section */
+    background-color: #2f2f2f;
     padding: 3rem;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2), 0px -4px 5px rgba(0, 0, 0, 0.2); /* Adjust the shadow as needed */
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2), 0px -4px 5px rgba(0, 0, 0, 0.2);
 }
 
 #photo {
-    background-color: #3b3b3b; /* Different color for photography section */
+    background-color: #3b3b3b;
     padding: 3rem;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2), 0px -4px 5px rgba(0, 0, 0, 0.2); /* Adjust the shadow as needed */
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2), 0px -4px 5px rgba(0, 0, 0, 0.2);
 
 }
 
 #contact {
-    background-color: #2b2b2b; /* Another shade for contact section */
+    background-color: #2b2b2b;
     padding: 3rem;
-    box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.2); /* Adjust the shadow as needed */
+    box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the image grid */
-.art-image-grid {   
+.art-image-grid { 
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Adjust the gap between images to 10 pixels */
-    padding: 0; /* Remove padding */
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
 }
 
 .photo-image-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Adjust the gap between images to 10 pixels */
-    padding: 0; /* Remove padding */
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
 }
 
-/* Style for individual images in the grid */
 .art-image-grid img {
     height: 200px;
     width: auto;
-    margin: 0; /* Remove margin */
-    border: 4px solid #393939; /* Add border style and color */
+    margin: 0;
+    justify-content: center;
+    border: 4px solid #393939;
     background-color: #464646;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4); /* Adjust the shadow as needed */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease; /* Add transition for smoother size change */
 }
 
 .photo-image-grid img {
     height: 200px;
     width: auto;
-    margin: 0; /* Remove margin */
-    border: 4px solid #474747; /* Add border style and color */
+    margin: 0;
+    justify-content: center;
+    border: 4px solid #474747;
     background-color: #575757;
+    transition: transform 0.3s ease; /* Add transition for smoother size change */
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2), 0px -4px 5px rgba(0, 0, 0, 0.2), 4px 0px 5px rgba(0, 0, 0, 0.2), -4px 0px 5px rgba(0, 0, 0, 0.2); /* Adjust the shadow as needed */
 }
 
+.art-image-grid img:hover,
+.photo-image-grid img:hover {
+    transform: scale(0.9); /* Scale down the image on hover */
+    transition: transform 0.3s ease; /* Add transition for smoother size change */
+}
+
 button {
-    display: block;
-    margin: 30px auto; /* Center the button horizontally and add a few pixels margin from the images */
-    padding: 10px 20px; /* Adjust the padding as needed */
-    border: none;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4); /* Adjust the shadow as needed */
-    border-radius: 10px; /* Add curved edges */
-    background-color: #252525ae; /* Button background color */
-    color: #ffffff; /* Button text color */
-    font-size: 16px;
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+    border: 5em;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for color change */
+    outline: none;
+    font-size: 16px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: white;
+    margin: 2rem auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+button .text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+}
+
+button:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #0e0e10;
 }
 
 button:hover {
-    background-color: #2e3c56ae; /* Change background color on hover */
-    box-shadow: 0px 0px 7px rgba(0, 16, 89, 0.2); /* Adjust the shadow as needed */
-    color: #fff; /* Change text color on hover */
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    transform: scale(1.1); /* Scale down the image on hover */
+}
+
+button:hover .text {
+    background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+    transform: scale(1.1); /* Scale down the image on hover */
 }
 
 /* Style for the enlarged image modal */
@@ -188,7 +249,6 @@ button:hover {
     justify-content: center; /* Center horizontally */
 }
 
-/* Style for the enlarged image modal */
 .modal-content {
     margin: auto;
     display: block;
@@ -204,12 +264,11 @@ button:hover {
 }
 
 
-/* Style to close the modal */
 .close {
     position: absolute;
     top: 10px;
     right: 10px;
-    color: #fff;
+    color: #ffffff;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -227,7 +286,7 @@ li {
     transition: transform 0.5s ease; /* Smooth transition for image sliding */
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1280px) {
     #main-sections-container {
         flex-direction: column; /* Change the flex direction to stack sections vertically */
     }
@@ -235,19 +294,45 @@ li {
     #about {
         order: 1; /* Change the order of the about section to display below the home section */
     }
-    header {
-        padding: 0.5rem 0; /* Adjust the padding for a more compact header */
-    }
-
-    h1 {
-        font-size: 1.5em; /* Adjust the font size for h1 on mobile */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack navigation items vertically on mobile */
-    }
-
-    nav ul li {
-        margin: 5px 0; /* Add some space between navigation items on mobile */
-    }
 }
+/* Add this to your styles */
+body.enlarged {
+    overflow: hidden;
+  }
+/* Add this to your styles */
+body::-webkit-scrollbar {
+    width: 10px; /* Adjust the width as needed */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #5c5c5c; /* Color of the thumb */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: #434343; /* Color of the track */
+  }
+
+  table.customTable {
+    width: 100%;
+    background-color: #555555;
+    border-collapse: collapse; /* Change border-collapse to separate */
+    border-spacing: 10px; /* Add spacing between rows and columns */
+}
+
+table.customTable img { 
+    height: 100px;
+    justify-content: center;
+}
+
+table.customTable td, table.customTable th {
+    border-width: 10px;
+    border-color: #424242;
+    padding: 10px;
+}
+
+table.customTable thead {
+    background-color: #424242;
+}
+
+  

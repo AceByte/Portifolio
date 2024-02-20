@@ -31,6 +31,17 @@ header {
     backdrop-filter: blur(4px); /* Add backdrop filter for blur effect */
 }
 
+a {
+    color: #e2e2e2;
+    transition: font-size 0.3s ease;
+}
+
+/* Add this CSS rule */
+nav a:hover {
+    font-size: 1.3em; /* Increase the font size on hover */
+}
+
+
 h1, h2, h3, h4 {
     color: #fff;
     font-family: 'headers', sans-serif;
@@ -43,7 +54,17 @@ p, b1, b2, b3, b4 {
     font-family: 'text', sans-serif;
     text-align: left;
 }
+th {
+    color: #ffffff;
+    font-family: 'text', sans-serif;
+    text-align: center;
+}
 
+td {
+    color: #aaaaaa;
+    font-family: 'text', sans-serif;
+    text-align: center;
+}
 body {
     background-color: #262d46;
 }
@@ -87,6 +108,7 @@ nav a {
 .art-image-grid {   
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px; /* Adjust the gap between images to 10 pixels */
     padding: 0; /* Remove padding */
 }
@@ -94,6 +116,7 @@ nav a {
 .photo-image-grid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px; /* Adjust the gap between images to 10 pixels */
     padding: 0; /* Remove padding */
 }
@@ -103,20 +126,28 @@ nav a {
     height: 200px;
     width: auto;
     margin: 0; /* Remove margin */
+    justify-content: center;
     border: 4px solid #393939; /* Add border style and color */
     background-color: #464646;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2), 0px -4px 5px rgba(0, 0, 0, 0.2), 4px 0px 5px rgba(0, 0, 0, 0.2), -4px 0px 5px rgba(0, 0, 0, 0.2); /* Adjust the shadow as needed */
+    transition: transform 0.3s ease; /* Add transition for smoother size change */
 }
 
 .photo-image-grid img {
     height: 200px;
     width: auto;
     margin: 0; /* Remove margin */
+    justify-content: center;
     border: 4px solid #474747; /* Add border style and color */
     background-color: #575757;
+    transition: transform 0.3s ease; /* Add transition for smoother size change */
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.2), 0px -4px 5px rgba(0, 0, 0, 0.2), 4px 0px 5px rgba(0, 0, 0, 0.2), -4px 0px 5px rgba(0, 0, 0, 0.2); /* Adjust the shadow as needed */
 }
 
+.art-image-grid img:hover,
+.photo-image-grid img:hover {
+    transform: scale(0.9); /* Scale down the image on hover */
+}
 
 /* Style for the enlarged image modal */
 .modal {
@@ -182,19 +213,22 @@ li {
     #about {
         order: 1; /* Change the order of the about section to display below the home section */
     }
-    header {
-        padding: 0.5rem 0; /* Adjust the padding for a more compact header */
-    }
-
-    h1 {
-        font-size: 1.5em; /* Adjust the font size for h1 on mobile */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack navigation items vertically on mobile */
-    }
-
-    nav ul li {
-        margin: 5px 0; /* Add some space between navigation items on mobile */
-    }
 }
+/* Add this to your styles */
+body.enlarged {
+    overflow: hidden;
+  }
+/* Add this to your styles */
+body::-webkit-scrollbar {
+    width: 10px; /* Adjust the width as needed */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #2d3b67; /* Color of the thumb */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: #1f2755; /* Color of the track */
+  }
+  

@@ -7,7 +7,7 @@ function enlargeImage(imageSrc) {
     modalContent.className = "modal-content";
     modalContent.src = imageSrc;
 
-    modalContent.onclick = closeModal; // Allow clicking outside the image to close
+    modalContent.onclick = closeModal; // Allow clicking on the image to close
 
     const closeButton = document.createElement("span");
     closeButton.className = "close";
@@ -22,11 +22,31 @@ function enlargeImage(imageSrc) {
     // Display the modal
     modal.style.display = "block";
 
+    // Add class to disable scrolling
+    document.body.classList.add('enlarged');
+
     // Function to close the modal
     function closeModal() {
         modal.style.display = "none";
         document.body.removeChild(modal);
+
+        // Remove class to enable scrolling
+        document.body.classList.remove('enlarged');
     }
+
+    // Close modal on clicking anywhere outside the image
+    modal.onclick = function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+
+    // Close modal on pressing the "Escape" key
+    document.addEventListener('keydown', function (event) {
+        if (event.key === "Escape") {
+            closeModal();
+        }
+    });
 }
 
 // Disable right-click context menu for images
@@ -75,4 +95,4 @@ imageInput.addEventListener('change', (event) => {
 
 function goToGallery() {
     window.location.href = 'gallery.html';
-}
+} 
