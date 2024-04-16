@@ -95,4 +95,20 @@ imageInput.addEventListener('change', (event) => {
 
 function goToGallery() {
     window.location.href = 'gallery.html';
-} 
+}
+
+document.getElementById('contactForm').addEventListener('submit', function(event){
+    event.preventDefault();
+
+    fetch('sendEmail.php', {
+        method: 'POST',
+        body: new FormData(document.getElementById('contactForm')),
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('formResponse').textContent = data;
+    })
+    .catch((error) => {
+        document.getElementById('formResponse').textContent = 'Error: Could not send message.';
+    });
+});
