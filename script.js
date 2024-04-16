@@ -76,39 +76,6 @@ function compressImage(file, callback) {
     });
 }
 
-// Example usage when an image input is selected by the user
-const imageInput = document.getElementById('your-image-input');
-
-imageInput.addEventListener('change', (event) => {
-    const selectedImage = event.target.files[0];
-
-    if (selectedImage) {
-        compressImage(selectedImage, (compressedImage) => {
-            // Handle the compressed image, for example, by displaying it
-            const compressedImageUrl = URL.createObjectURL(compressedImage);
-            const imgElement = document.createElement('img');
-            imgElement.src = compressedImageUrl;
-            // Append the imgElement to the DOM as needed
-        });
-    }
-});
-
 function goToGallery() {
     window.location.href = 'gallery.html';
 }
-
-document.getElementById('contactForm').addEventListener('submit', function(event){
-    event.preventDefault();
-
-    fetch('sendEmail.php', {
-        method: 'POST',
-        body: new FormData(document.getElementById('contactForm')),
-    })
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('formResponse').textContent = data;
-    })
-    .catch((error) => {
-        document.getElementById('formResponse').textContent = 'Error: Could not send message.';
-    });
-});
